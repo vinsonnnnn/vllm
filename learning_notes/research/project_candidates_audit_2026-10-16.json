@@ -1,0 +1,846 @@
+{
+  "schema_version": 1,
+  "checked_at_utc": "2026-10-16 15:20:27 UTC",
+  "learning_source_commit": "f9c98bd1ebbddb9acedb1e6d7505ad9588f9a266",
+  "local_head_at_start": "5b3ee5181ebecbdbe95d91364077a5651149f59a",
+  "upstream_main_observed": {
+    "sha": "8e25bbca19f0605b347e103dde4bf5355d049e72",
+    "date": "2026-10-16T15:01:07Z",
+    "url": "https://github.com/vllm-project/vllm/commit/8e25bbca19f0605b347e103dde4bf5355d049e72"
+  },
+  "scope": "Read-only topic screening; no implementation, model evaluation, or benchmark was run.",
+  "limitations": [
+    "Method-name absence is not proof of missing equivalent implementation.",
+    "Search results include only the requested first page; matching PRs may use different names.",
+    "Paper and README claims were reviewed selectively; external source and licenses were not fully audited.",
+    "Repository commits are API observations, not proof that all read web pages were rendered at these commits.",
+    "Official source repositories were not confirmed for EvoSpec, SageSched, CONCUR, or CacheScout.",
+    "Not a completed pre-PR duplication audit; no issues, comments, or pull requests were created."
+  ],
+  "method_queries": [
+    {
+      "name": "SINQ",
+      "pull_requests": {
+        "name": "SINQ",
+        "query": "repo:vllm-project/vllm is:pr \"SINQ\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "SINQ",
+        "query": "repo:vllm-project/vllm is:issue \"SINQ\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "NanoSpec",
+      "pull_requests": {
+        "name": "NanoSpec",
+        "query": "repo:vllm-project/vllm is:pr \"NanoSpec\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "NanoSpec",
+        "query": "repo:vllm-project/vllm is:issue \"NanoSpec\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "EvoSpec",
+      "pull_requests": {
+        "name": "EvoSpec",
+        "query": "repo:vllm-project/vllm is:pr \"EvoSpec\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "EvoSpec",
+        "query": "repo:vllm-project/vllm is:issue \"EvoSpec\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "FastKVzip",
+      "pull_requests": {
+        "name": "FastKVzip",
+        "query": "repo:vllm-project/vllm is:pr \"FastKVzip\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "FastKVzip",
+        "query": "repo:vllm-project/vllm is:issue \"FastKVzip\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "KVzap",
+      "pull_requests": {
+        "name": "KVzap",
+        "query": "repo:vllm-project/vllm is:pr \"KVzap\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "KVzap",
+        "query": "repo:vllm-project/vllm is:issue \"KVzap\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "SAM-Decoding",
+      "pull_requests": {
+        "name": "SAM-Decoding",
+        "query": "repo:vllm-project/vllm is:pr \"SAM-Decoding\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "SAM-Decoding",
+        "query": "repo:vllm-project/vllm is:issue \"SAM-Decoding\"",
+        "count": 2,
+        "items": [
+          {
+            "number": 29791,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/29791"
+          },
+          {
+            "number": 6264,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/6264"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Saguaro",
+      "pull_requests": {
+        "name": "Saguaro",
+        "query": "repo:vllm-project/vllm is:pr \"Saguaro\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "Saguaro",
+        "query": "repo:vllm-project/vllm is:issue \"Saguaro\"",
+        "count": 1,
+        "items": [
+          {
+            "number": 42109,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/issues/42109"
+          }
+        ]
+      }
+    },
+    {
+      "name": "JetSpec",
+      "pull_requests": {
+        "name": "JetSpec",
+        "query": "repo:vllm-project/vllm is:pr \"JetSpec\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "JetSpec",
+        "query": "repo:vllm-project/vllm is:issue \"JetSpec\"",
+        "count": 1,
+        "items": [
+          {
+            "number": 54928,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/issues/54928"
+          }
+        ]
+      }
+    },
+    {
+      "name": "SpecFit",
+      "pull_requests": {
+        "name": "SpecFit",
+        "query": "repo:vllm-project/vllm is:pr \"SpecFit\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "SpecFit",
+        "query": "repo:vllm-project/vllm is:issue \"SpecFit\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "SpecReason",
+      "pull_requests": {
+        "name": "SpecReason",
+        "query": "repo:vllm-project/vllm is:pr \"SpecReason\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "SpecReason",
+        "query": "repo:vllm-project/vllm is:issue \"SpecReason\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "KVLink",
+      "pull_requests": {
+        "name": "KVLink",
+        "query": "repo:vllm-project/vllm is:pr \"KVLink\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "KVLink",
+        "query": "repo:vllm-project/vllm is:issue \"KVLink\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "SageSched",
+      "pull_requests": {
+        "name": "SageSched",
+        "query": "repo:vllm-project/vllm is:pr \"SageSched\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "SageSched",
+        "query": "repo:vllm-project/vllm is:issue \"SageSched\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "SLAI",
+      "pull_requests": {
+        "name": "SLAI",
+        "query": "repo:vllm-project/vllm is:pr \"SLAI\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "SLAI",
+        "query": "repo:vllm-project/vllm is:issue \"SLAI\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "EPIC",
+      "pull_requests": {
+        "name": "EPIC",
+        "query": "repo:vllm-project/vllm is:pr \"EPIC\"",
+        "count": 5,
+        "items": [
+          {
+            "number": 50470,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/pull/50470"
+          },
+          {
+            "number": 51718,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/51718"
+          },
+          {
+            "number": 34709,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/34709"
+          },
+          {
+            "number": 5006,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/5006"
+          },
+          {
+            "number": 4645,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/4645"
+          }
+        ]
+      },
+      "issues": {
+        "name": "EPIC",
+        "query": "repo:vllm-project/vllm is:issue \"EPIC\"",
+        "count": 4,
+        "items": [
+          {
+            "number": 30589,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/30589"
+          },
+          {
+            "number": 29641,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/29641"
+          },
+          {
+            "number": 6189,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/6189"
+          },
+          {
+            "number": 7828,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/7828"
+          }
+        ]
+      }
+    },
+    {
+      "name": "CONCUR",
+      "pull_requests": {
+        "name": "CONCUR",
+        "query": "repo:vllm-project/vllm is:pr \"CONCUR\"",
+        "count": 5,
+        "items": [
+          {
+            "number": 61348,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/pull/61348"
+          },
+          {
+            "number": 53781,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/53781"
+          },
+          {
+            "number": 43655,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/43655"
+          },
+          {
+            "number": 19288,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/19288"
+          },
+          {
+            "number": 19299,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/19299"
+          }
+        ]
+      },
+      "issues": {
+        "name": "CONCUR",
+        "query": "repo:vllm-project/vllm is:issue \"CONCUR\"",
+        "count": 5,
+        "items": [
+          {
+            "number": 27991,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/27991"
+          },
+          {
+            "number": 25979,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/25979"
+          },
+          {
+            "number": 17227,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/17227"
+          },
+          {
+            "number": 14392,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/14392"
+          },
+          {
+            "number": 13031,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/issues/13031"
+          }
+        ]
+      }
+    },
+    {
+      "name": "Continuum",
+      "pull_requests": {
+        "name": "Continuum",
+        "query": "repo:vllm-project/vllm is:pr \"Continuum\"",
+        "count": 2,
+        "items": [
+          {
+            "number": 38514,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/pull/38514"
+          },
+          {
+            "number": 3884,
+            "state": "closed",
+            "url": "https://github.com/vllm-project/vllm/pull/3884"
+          }
+        ]
+      },
+      "issues": {
+        "name": "Continuum",
+        "query": "repo:vllm-project/vllm is:issue \"Continuum\"",
+        "count": 2,
+        "items": [
+          {
+            "number": 37003,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/issues/37003"
+          },
+          {
+            "number": 59708,
+            "state": "open",
+            "url": "https://github.com/vllm-project/vllm/issues/59708"
+          }
+        ]
+      }
+    },
+    {
+      "name": "ThunderAgent",
+      "pull_requests": {
+        "name": "ThunderAgent",
+        "query": "repo:vllm-project/vllm is:pr \"ThunderAgent\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "ThunderAgent",
+        "query": "repo:vllm-project/vllm is:issue \"ThunderAgent\"",
+        "count": 0,
+        "items": []
+      }
+    },
+    {
+      "name": "CacheScout",
+      "pull_requests": {
+        "name": "CacheScout",
+        "query": "repo:vllm-project/vllm is:pr \"CacheScout\"",
+        "count": 0,
+        "items": []
+      },
+      "issues": {
+        "name": "CacheScout",
+        "query": "repo:vllm-project/vllm is:issue \"CacheScout\"",
+        "count": 0,
+        "items": []
+      }
+    }
+  ],
+  "area_queries": [
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"dynamic\" \"vocabulary\"",
+      "count": 13,
+      "items": [
+        {
+          "number": 53987,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/53987"
+        },
+        {
+          "number": 58426,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/58426"
+        },
+        {
+          "number": 59740,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/59740"
+        },
+        {
+          "number": 61605,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61605"
+        },
+        {
+          "number": 60527,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60527"
+        },
+        {
+          "number": 60034,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60034"
+        },
+        {
+          "number": 60387,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60387"
+        },
+        {
+          "number": 59804,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/59804"
+        }
+      ]
+    },
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"suffix automaton\"",
+      "count": 0,
+      "items": []
+    },
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"position-independent\"",
+      "count": 10,
+      "items": [
+        {
+          "number": 57968,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/57968"
+        },
+        {
+          "number": 61971,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61971"
+        },
+        {
+          "number": 60287,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60287"
+        },
+        {
+          "number": 57736,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/57736"
+        },
+        {
+          "number": 60674,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60674"
+        },
+        {
+          "number": 55097,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/55097"
+        },
+        {
+          "number": 53592,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/53592"
+        },
+        {
+          "number": 42910,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/42910"
+        }
+      ]
+    },
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"SLO\" \"scheduler\"",
+      "count": 4,
+      "items": [
+        {
+          "number": 61019,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61019"
+        },
+        {
+          "number": 61506,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61506"
+        },
+        {
+          "number": 54625,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/54625"
+        },
+        {
+          "number": 53571,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/53571"
+        }
+      ]
+    },
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"online\" \"draft\" \"LoRA\"",
+      "count": 15,
+      "items": [
+        {
+          "number": 47630,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/47630"
+        },
+        {
+          "number": 61325,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61325"
+        },
+        {
+          "number": 60505,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60505"
+        },
+        {
+          "number": 61287,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61287"
+        },
+        {
+          "number": 61708,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61708"
+        },
+        {
+          "number": 60339,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60339"
+        },
+        {
+          "number": 57092,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/57092"
+        },
+        {
+          "number": 60833,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/60833"
+        }
+      ]
+    },
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"kvpress\"",
+      "count": 0,
+      "items": []
+    },
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open \"draft\" \"vocab\"",
+      "count": 115,
+      "items": [
+        {
+          "number": 61451,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61451"
+        },
+        {
+          "number": 58231,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/58231"
+        },
+        {
+          "number": 61127,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61127"
+        },
+        {
+          "number": 61996,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61996"
+        },
+        {
+          "number": 47630,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/47630"
+        },
+        {
+          "number": 53987,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/53987"
+        },
+        {
+          "number": 58426,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/58426"
+        },
+        {
+          "number": 61429,
+          "state": "open",
+          "url": "https://github.com/vllm-project/vllm/pull/61429"
+        }
+      ]
+    }
+  ],
+  "issue_reference_queries": [
+    {
+      "query": "repo:vllm-project/vllm is:pr is:open 42109 in:body",
+      "count": 0,
+      "items": []
+    }
+  ],
+  "related_pull_requests": [
+    {
+      "number": 38514,
+      "title": "[Feature] Context-Aware KV-Cache Retention API (#37003)",
+      "state": "open",
+      "merged_at": null,
+      "url": "https://github.com/vllm-project/vllm/pull/38514",
+      "summary_zh": "基于范围优先级和 TTL 的 KV 保留 API；Continuum 相关工作。"
+    },
+    {
+      "number": 53571,
+      "title": "[feat]Add SLO-aware scheduling policy",
+      "state": "open",
+      "merged_at": null,
+      "url": "https://github.com/vllm-project/vllm/pull/53571",
+      "summary_zh": "按 TTFT 目标和请求年龄调整等待队列；不等于运行中 decode 截止时间策略。"
+    },
+    {
+      "number": 59740,
+      "title": "[MRV2][Spec Decode] Context Aware Sparse LM Head",
+      "state": "open",
+      "merged_at": null,
+      "url": "https://github.com/vllm-project/vllm/pull/59740",
+      "summary_zh": "静态草稿词表结合上下文选行的稀疏 LM Head，与动态词表项目存在交集。"
+    },
+    {
+      "number": 60387,
+      "title": "[Spec Decode] Generic reduced-vocabulary get_top_tokens() for DraftModelSpeculator",
+      "state": "open",
+      "merged_at": null,
+      "url": "https://github.com/vllm-project/vllm/pull/60387",
+      "summary_zh": "对部分通用 drafter 增加缩小草稿词表的可选路径。"
+    },
+    {
+      "number": 60339,
+      "title": "[Spec Decode][MRV2] Suffix decoding speculator for Model Runner V2",
+      "state": "open",
+      "merged_at": null,
+      "url": "https://github.com/vllm-project/vllm/pull/60339",
+      "summary_zh": "MRV2 GPU suffix speculator，与检索式 proposer 项目存在交集。"
+    }
+  ],
+  "related_issue_summaries": [
+    {
+      "number": 36037,
+      "title": "[Feature]: Supports Speculative Speculative Decoding",
+      "state": "closed",
+      "url": "https://github.com/vllm-project/vllm/issues/36037"
+    },
+    {
+      "number": 37003,
+      "title": "[RFC]: Context-Aware KV-Cache Retention API (Prioritized Evictions)",
+      "state": "open",
+      "url": "https://github.com/vllm-project/vllm/issues/37003"
+    },
+    {
+      "number": 58578,
+      "title": "[Feature]: Reduced draft vocabulary for MTP drafters that share the target lm_head (measured +25-29 % decode)",
+      "state": "open",
+      "url": "https://github.com/vllm-project/vllm/issues/58578"
+    },
+    {
+      "number": 42109,
+      "title": "[RFC]: Disaggregated Speculative Decoding with Standalone Parallel Draft Model",
+      "state": "open",
+      "url": "https://github.com/vllm-project/vllm/issues/42109"
+    }
+  ],
+  "comments_read": [
+    {
+      "issue": 42109,
+      "items": [
+        {
+          "url": "https://github.com/vllm-project/vllm/issues/42109#issuecomment-4427885326"
+        },
+        {
+          "url": "https://github.com/vllm-project/vllm/issues/42109#issuecomment-4431218168"
+        },
+        {
+          "url": "https://github.com/vllm-project/vllm/issues/42109#issuecomment-4561513801"
+        },
+        {
+          "url": "https://github.com/vllm-project/vllm/issues/42109#issuecomment-5024188417"
+        }
+      ],
+      "review_note_zh": "已阅读 RFC 评论，其中包含公开原型分支链接和对适用模型及工程成本的讨论；不复制评论正文。"
+    }
+  ],
+  "repository_snapshots": [
+    {
+      "repo": "huawei-csl/SINQ",
+      "sha": "42ca83edf8fe1afc48c40fca6acc973c5d2bb59f",
+      "date": "2026-05-08T10:07:09Z",
+      "url": "https://github.com/huawei-csl/SINQ/commit/42ca83edf8fe1afc48c40fca6acc973c5d2bb59f"
+    },
+    {
+      "repo": "csAugust/NanoSpec",
+      "sha": "e836c00f589215e1fb7e08413026c040e8ce3f80",
+      "date": "2026-05-27T10:11:53Z",
+      "url": "https://github.com/csAugust/NanoSpec/commit/e836c00f589215e1fb7e08413026c040e8ce3f80"
+    },
+    {
+      "repo": "NVIDIA/kvpress",
+      "sha": "7136c224105ba7b046a6e538742c3589698680b8",
+      "date": "2026-10-05T17:31:28Z",
+      "url": "https://github.com/NVIDIA/kvpress/commit/7136c224105ba7b046a6e538742c3589698680b8"
+    },
+    {
+      "repo": "Janghyun1230/FastKVzip",
+      "sha": "e04afaa6007c58d18500d0698d2d8ae592ff22c2",
+      "date": "2026-04-05T00:58:20Z",
+      "url": "https://github.com/Janghyun1230/FastKVzip/commit/e04afaa6007c58d18500d0698d2d8ae592ff22c2"
+    },
+    {
+      "repo": "hyx1999/SAM-Decoding",
+      "sha": "aaf939819223147ce544e3a80f65758ac7758076",
+      "date": "2026-05-12T05:25:13Z",
+      "url": "https://github.com/hyx1999/SAM-Decoding/commit/aaf939819223147ce544e3a80f65758ac7758076"
+    },
+    {
+      "repo": "tanishqkumar/ssd",
+      "sha": "d7eb8fa0edb77a6d0876af1903367b9bb82f54e7",
+      "date": "2026-05-10T04:44:48Z",
+      "url": "https://github.com/tanishqkumar/ssd/commit/d7eb8fa0edb77a6d0876af1903367b9bb82f54e7"
+    },
+    {
+      "repo": "hao-ai-lab/JetSpec",
+      "sha": "2c7b3fae75690dfe9a188a37d7fdfd43ee0e032f",
+      "date": "2026-06-27T10:07:40Z",
+      "url": "https://github.com/hao-ai-lab/JetSpec/commit/2c7b3fae75690dfe9a188a37d7fdfd43ee0e032f"
+    },
+    {
+      "repo": "JetSpec-project/vllm-jetspec",
+      "sha": "f90d5ca17a2c05f436a80ee2e0984cc7a22e1a16",
+      "date": "2026-06-24T19:26:08Z",
+      "url": "https://github.com/JetSpec-project/vllm-jetspec/commit/f90d5ca17a2c05f436a80ee2e0984cc7a22e1a16"
+    },
+    {
+      "repo": "Chlience/SpecFit",
+      "sha": "4973b3cdc48e5c016bc6c5ed18639d3163e8b2f5",
+      "date": "2026-10-11T07:20:59Z",
+      "url": "https://github.com/Chlience/SpecFit/commit/4973b3cdc48e5c016bc6c5ed18639d3163e8b2f5"
+    },
+    {
+      "repo": "ruipeterpan/specreason",
+      "sha": "6fd5b12929590e6824957191cc2e40a93d021339",
+      "date": "2025-10-02T18:44:51Z",
+      "url": "https://github.com/ruipeterpan/specreason/commit/6fd5b12929590e6824957191cc2e40a93d021339"
+    },
+    {
+      "repo": "DerekHJH/epic",
+      "sha": "3204410f1723ed0f39575b4eba8c17578a1ee1a1",
+      "date": "2026-02-02T11:36:33Z",
+      "url": "https://github.com/DerekHJH/epic/commit/3204410f1723ed0f39575b4eba8c17578a1ee1a1"
+    },
+    {
+      "repo": "UCSB-NLP-Chang/KVLink",
+      "sha": "41785d8e41f430671e2c080fbfb01e367b733ae2",
+      "date": "2025-10-16T21:17:56Z",
+      "url": "https://github.com/UCSB-NLP-Chang/KVLink/commit/41785d8e41f430671e2c080fbfb01e367b733ae2"
+    },
+    {
+      "repo": "agrimUT/SLAI",
+      "sha": "5098a7aba05e3edbcfa3a509d6cc9cd248fc4380",
+      "date": "2025-08-14T22:12:43Z",
+      "url": "https://github.com/agrimUT/SLAI/commit/5098a7aba05e3edbcfa3a509d6cc9cd248fc4380"
+    },
+    {
+      "repo": "Hanchenli/vllm-continuum",
+      "sha": "316a58794a6ff86b216e579b74fd56ed0c5a911f",
+      "date": "2026-03-20T05:23:59Z",
+      "url": "https://github.com/Hanchenli/vllm-continuum/commit/316a58794a6ff86b216e579b74fd56ed0c5a911f"
+    },
+    {
+      "repo": "ThunderAgent-org/ThunderAgent",
+      "sha": "7ddc8610270e56d3b109eed8796b3a4360fc67c9",
+      "date": "2026-06-05T21:54:47Z",
+      "url": "https://github.com/ThunderAgent-org/ThunderAgent/commit/7ddc8610270e56d3b109eed8796b3a4360fc67c9"
+    }
+  ],
+  "sources_not_fully_audited": true
+}

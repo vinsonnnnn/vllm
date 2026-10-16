@@ -109,3 +109,21 @@ uv run --no-project --offline --python .venv/bin/python python -m pre_commit val
 未执行：pytest 测试函数、模型推理、模型 eval、prefix cache／异步／graph 的 GPU 对照、DFlash 运行、benchmark 和 profiler 采集。第十章脚本的 `run` 路径及第九章模型示例均仅提供步骤。没有为 GPU 性能填写任何数字；三次同实例重复与独立进程重复在实验协议中分别说明。
 
 原始实验输出和 trace 的预期目录 `learning_notes/artifacts/` 已忽略，防止自动推送大体积产物。最终只暂存本轮学习材料，并将实际提交与远端 SHA 在聊天中报告。
+
+## 非算子优化选题文档与检索初筛（2026-10-16）
+
+本轮起始 HEAD 为 `5b3ee5181ebecbdbe95d91364077a5651149f59a`，工作区干净。新增 `research/project_candidates_2026-10-16.md` 和配套检索 JSON，在首页增加入口；不修改业务源码、用户原有方案、依赖和版本。
+
+文档包含 18 个论文/开源候选，区分核心模块、外部组件和研究储备，分别说明原理、已有实现、非算子前提、最小范围、硬件条件与实验。读取论文和作者 README，不将摘要或仓库宣传的性能作为本机结果。记录 44 条 GitHub 查询及 15 个外部仓库的 commit，保留命中计数、链接与相关工作元数据，不复制 issue/PR 评论正文。
+
+查重发现稀疏草稿词表、MRV2 suffix、KV 保留 API 及异步 draft 服务均有相近上游工作；选题文档已标记协作或暂停同功能独立 PR。只完成资料初筛，未对所有领域结果分页和逐条读取评论，不能声称最终不存在重复工作；没有发送消息、创建 issue 或 PR。
+
+实际执行与结果：
+
+1. 固定源码关键词检索完成；相对源码基线，允许范围外的已跟踪文件无差异，未切换版本。
+2. `uv run --no-project --offline --python .venv/bin/python python learning_notes/tools/check_sources.py` 通过：191 个本地链接、161 处源码行号、32 段原文、79 个原有 AST 锚点、10 章结构和 4 份脚本语法。首次检查发现新增引用标签使用了短路径，已改为仓库相对完整路径并重跑通过。
+3. 临时离线审计通过：18 个卡片与总表逐项对应、查询 JSON 结构有效、15 个完整 commit/链接一致，以及新增文档的 11 处源码入口均可解析且行号对应符号。临时命令未增加仓库测试文件；首次通过 PowerShell 传递脚本时的非 ASCII 编码问题已修正后重跑。
+4. 直接调用已有缓存中的 Node/Markdownlint，文档和首页格式检查退出码为 0；没有运行会自动下载工具环境的完整 hooks，没有安装依赖。SPDX 检查脚本仅适用 Python/Rust/proto，本轮仅 Markdown/JSON，不适用该检查。
+5. `git diff --check` 通过。新增 JSON 不包含凭据、私有数据或外部大段正文；外部源码与许可未做完整审计。
+
+本轮没有执行候选方法、pytest 模型测试、GPU 推理、质量评测或 benchmark。文档的实验均为后续步骤。最终只提交本轮文档，推送成功与远端 SHA 在交付消息中报告。
