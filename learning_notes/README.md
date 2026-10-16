@@ -34,7 +34,7 @@
 
 ## 固定版本的约定
 
-源码基线始终是上述完整 commit。学习笔记的提交会推进分支 HEAD；后续每轮确认基线仍是 HEAD 的祖先，且基线以来 `learning_notes/` 以外的已跟踪文件与当前工作区没有差异，再沿用源码行号。若有其他差异，先指出偏差，不把新源码结论混入本套笔记，不自动切回旧 commit，不覆盖用户改动。
+源码基线始终是上述完整 commit。学习笔记的提交会推进分支 HEAD；后续每轮确认基线仍是 HEAD 的祖先，且业务源码和开发配置与基线一致，再沿用源码行号。检查脚本仅排除 `learning_notes/` 与用户另行提交的 `优化/vllm_dflash_dcut_plan_and_prompts.md`；后者是项目方案文档，不是源码或已经执行的任务。若有其他差异，先指出偏差，不把新源码结论混入本套笔记，不自动切回旧 commit，不覆盖用户改动。
 
 用户已授权：每轮更改并完成必要检查后，自动提交本轮自己的改动并推送到 `origin`（`vinsonnnnn/vllm`），本系列当前分支为 `main`；不夹带用户其他改动、不强制推送。将推送结果报告给用户。这项授权不包括创建 PR、切换源码版本或安装、升级依赖。
 
@@ -45,17 +45,21 @@
 | 章 | 主题 | 当前状态 |
 | --- | --- | --- |
 | 01 | [仓库地图与最小运行示例](chapters/01_repository_and_minimal_run.md) | 已编写并核对引用 |
-| 02 | 单个文本请求从输入到输出 | 待编写 |
-| 03 | Request、跨进程消息与输出状态 | 待编写 |
-| 04 | Scheduler、两类 token 预算与 Continuous Batching | 待编写 |
-| 05 | KV Cache、Block Table、Slot Mapping 与 Prefix Cache | 待编写 |
-| 06 | Model Runner V2、输入组织与 Attention Backend | 待编写 |
-| 07 | 进程、通信、异步调度与执行重叠 | 待编写 |
-| 08 | CUDA Graph、形状选择与 padding | 待编写 |
-| 09 | 投机解码与验证预算的研究入口 | 待编写 |
-| 10 | 正确性、性能分析与最小改进实验 | 待编写 |
+| 02 | [单个文本请求从输入到输出](chapters/02_request_lifecycle.md) | 已编写并核对引用 |
+| 03 | [Request、跨进程消息与输出状态](chapters/03_request_state.md) | 已编写并核对引用 |
+| 04 | [Scheduler、两类 token 预算与 Continuous Batching](chapters/04_scheduler_and_budget.md) | 已编写并核对引用 |
+| 05 | [KV Cache、Block Table、Slot Mapping 与 Prefix Cache](chapters/05_kv_cache.md) | 已编写并核对引用 |
+| 06 | [Model Runner V2、输入组织与 Attention Backend](chapters/06_model_runner.md) | 已编写并核对引用 |
+| 07 | [进程、通信、异步调度与执行重叠](chapters/07_processes_and_async.md) | 已编写并核对引用 |
+| 08 | [CUDA Graph、形状选择与 padding](chapters/08_cuda_graph.md) | 已编写并核对引用 |
+| 09 | [投机解码与验证预算的研究入口](chapters/09_speculative_decoding.md) | 已编写并核对引用 |
+| 10 | [正确性、性能分析与最小改进实验](chapters/10_experiments_and_profiling.md) | 协议与脚本已编写；GPU 实验待运行 |
 
 配套材料：[学习路线](roadmap.md)、[增量术语表](glossary.md)、[实际检查记录](checks.md)。第一章附带可复用的环境探测、最小生成示例和源码引用检查脚本，均放在 `tools/`；不放入业务代码或仓库测试套件。
+
+十章写作已完成。第二章先讲完整普通生成，第三至八章逐层深入其状态、资源和执行，第九章再讲完整投机周期，第十章给出最小实验。不要把每章源文件地图当成逐一通读任务：先沿案例追一条边，确认输入、状态修改和下一消费者，再扩展分支。
+
+第十章新增 `tools/experiment_generate.py`，可在环境就绪后保存实际输入／输出与离线计时，并精确比较 token。`artifacts/` 与 trace 输出已忽略；本轮未生成 GPU 结果。2026-10-16 再次探测确认运行依赖仍缺失，初始环境表不构成当前推理可用性承诺。
 
 目录调整依据：
 

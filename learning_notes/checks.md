@@ -80,3 +80,32 @@ uv run --no-project --offline --python .venv/bin/python python -m pre_commit val
 - 远端 `refs/heads/main` 在推送前核实为原始源码基线，目标为 `origin` 的 `vinsonnnnn/vllm`；不创建 PR，不强制推送。
 
 推送成功与提交号在聊天中报告，以免为写入本次提交号制造递归提交。本节不会将推送前检查视作推送成功的证据。
+
+## 剩余章节编写与核对（2026-10-16）
+
+用户要求继续完成其他剩余章节并提交 GitHub。本轮先读首页、路线和第一章总结；起始 HEAD 为 `8787e13e232bebc97704fa90b465c5c79e1ddabe`，工作区干净，远端 main 与之相同。相对固定源码基线，仅已有学习笔记和用户新增的 `优化/vllm_dflash_dcut_plan_and_prompts.md`；业务源码、配置与测试未变化。
+
+因此将基线检查的排除项精确增加上述用户文档；没有把它的实施提示词当成本轮执行指令，没有修改该文档、切换版本或开展 D-Cut 业务实现。第一章保留，新增第二至十章，更新目录、路线和增量术语。
+
+### 本轮源码核对重点
+
+- 普通请求：renderer 实际 tokenize、InputProcessor 构造消息、内部 ID、核心输入线程创建 Request、目标 logits／采样、逐 token 停止、前端 stop string 与 FINAL_ONLY。
+- 状态与调度：新／缓存请求增量，输出 ID 映射、调度后预记账、in-flight、两类预算、chunked prefill、抢占重算和 Worker 清理。
+- KV 与 Runner：前缀 hash、容量检查、引用计数、部分命中／CoW、块表／slot mapping、持久行与 batch 行、positions／seq_lens、Attention 包装和实际 backend 调用边界。
+- 异步与图：batch queue、placeholder、D2H 事件、stale／取消、仅特定 connector 条件开启的 deferred free、MRV2 graph 描述与兼容匹配、padding 和 replay。
+- 投机：同步候选交接、MRV2 greedy 前缀验证、纠正／bonus、CPU 和 GPU 拒绝回退、DFlash propose、Dynamic SD 与当前限 DSpark 的 Adaptive Verification。
+- 实验：本版 throughput 的输入／输出 token 分母、serve 的 TPOT、profile 控制、最小离线预算对照的测量边界。
+
+引用检查中发现并修正了新摘录范围包含末尾空行，以及两个手工方法行号偏移；另修复 Markdown 格式工具将链接标签中的双下划线路径当成强调的情况，使用转义保留真实文件名，并重新核对链接目标。最终以实际源码和 AST 为准。静态检查只保证路径、行号、符号、原文和结构，因果解释另按调用者、返回值与状态更新人工核查；不能据此认定 GPU 运行通过。
+
+### 本轮实际执行
+
+1. 再次在 WSL 用现有 uv／`.venv/bin/python` 运行 `probe_environment.py`。Python 3.12.15 可用；vLLM、Torch、Triton、Transformers、pytest 仍无安装元数据。没有安装／升级依赖或下载模型；本轮没有触发 pre-commit 环境初始化。
+2. 运行扩展后的 `check_sources.py`：十章的十个规定部分、3—5 个目标问题、5—8 个自检问题与对应末尾答案均通过；32 段源码摘录逐字匹配，150 处源码行号引用、79 个 AST 符号锚点通过。脚本还检查本地链接、四份工具脚本语法、行尾空白与 Python 88 列。
+3. 直接使用已有缓存中的 Ruff 与 Markdownlint，未运行会安装环境的自动 hooks。Ruff 格式和 lint 检查通过；Markdownlint 检查十四份 Markdown 后为 0 error(s)。SPDX 头按仓库脚本检查。
+4. 新增 `experiment_generate.py`；实际运行 `--help` 和比较器合成夹具验证。比较器契约是：输入真实运行记录，配置相容且重复输出一致时报告统计；配置／token／停止原因／计数／时长无效时拒绝比较。使用最便宜的标准库子进程验证层，未导入模型。
+5. 八项合成检查通过：相同记录接受、跨配置 token 差异拒绝、同配置重复差异拒绝、错误输出计数拒绝、零时长拒绝、dtype 条件差异拒绝、空运行记录拒绝，以及本地模型目录不存在时在导入 vLLM 前拒绝。合成输入只在临时目录存在并自动清理；没有留下可误认为真实性能结果的 JSON。
+
+未执行：pytest 测试函数、模型推理、模型 eval、prefix cache／异步／graph 的 GPU 对照、DFlash 运行、benchmark 和 profiler 采集。第十章脚本的 `run` 路径及第九章模型示例均仅提供步骤。没有为 GPU 性能填写任何数字；三次同实例重复与独立进程重复在实验协议中分别说明。
+
+原始实验输出和 trace 的预期目录 `learning_notes/artifacts/` 已忽略，防止自动推送大体积产物。最终只暂存本轮学习材料，并将实际提交与远端 SHA 在聊天中报告。

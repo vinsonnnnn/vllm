@@ -25,3 +25,40 @@
 | Sampling | 采样；从 logits 选择输出 token，前向返回 hidden states 不等于已返回用户 token | 01 |
 | Detokenization | 反分词；把 token ID 转为文本，是前端输出链的一部分 | 01 |
 | TTFT / Throughput | 首 token 延迟／吞吐；第十章分别定义测量窗口和负载条件 | 01 |
+
+## 第二至十章新增与精化
+
+| 术语 | 中文含义与当前源码中的作用 | 首次深入 |
+| --- | --- | --- |
+| Renderer | 输入渲染器；纯文本路径在此正规化输入、tokenize 并构造 EngineInput | 02 |
+| EngineCoreRequest | 发往核心的请求消息；与核心可变 Request 通过字段关联，不能依赖对象身份 | 02 |
+| External / internal request ID | 外部／内部请求标识；前者面向调用者，后者用于引擎路由与唯一性 | 02 |
+| FINAL_ONLY | 只对外产出最终结果；中间 token 仍被内部输出状态消费 | 02 |
+| Stop token / stop string | 终止 token／字符串；分别由核心 token 检查和前端增量文本检查处理 | 02 |
+| RequestState | 同名但不同类：前端保存输出状态；MRV2 `gpu/states.py` 保存持久请求行，不可混用 | 03 |
+| SchedulerOutput | 一轮计划；包含每请求安排量、新请求信息、增量与清理 ID | 03 |
+| ModelRunnerOutput | 一轮回收结果；包含 ID 顺序映射与各请求实际有效 token | 03 |
+| num_in_flight_tokens | 已安排而输出尚未处理的位置数；与乐观 computed 共同描述进度 | 03 |
+| Preemption | 抢占；回收／安排回收 KV、回队列并重算，保留已提交 token，不等于请求取消 | 03—04 |
+| Chunked prefill | 分块 prompt 计算；部分 prompt 可与其他请求 decode 同轮安排，未完成的 chunk 不提交正式输出 | 04 |
+| input_budget / token_budget | 本轮输入／调度额度；在 Scheduler 内由不同配置初始化，投机 drafting 槽位可影响前者扣减 | 04 |
+| Hash chain | 前缀 hash 链；当前块 hash 包含前缀链信息，不能只按局部 token 匹配上下文 | 05 |
+| CoW | 写时复制；部分缓存共享后需继续写时，转为私有块并保护复制两端生命周期 | 05 |
+| KV group | KV 缓存组；协调器按组管理不同存储约束；单组教学例子不能直接外推到混合模型 | 05 |
+| idx_mapping | 本轮 batch 行到 MRV2 持久请求行的映射，允许执行重排而不搬动全部持久状态 | 06 |
+| query_start_loc | 展平 query 张量中各请求的累计分段边界，长度通常为请求数加一 | 06 |
+| positions / seq_lens | 各输入 token 的逻辑位置／该请求本轮总可见长度；与 query 长度不同 | 06 |
+| Forward context | 前向上下文；将按层 metadata、KV 和 slot mapping 接到 attention 实现 | 06 |
+| Placeholder | 占位位置；CPU 用于异步预记账，Worker 中的实际 token 另行保存，不将 -1 当正常 token 输入 | 07 |
+| D2H / copy event | 设备到主机复制／复制完成事件；CPU 转列表前须满足相应完成条件 | 07 |
+| Stale output | 旧状态的晚到输出；抢占／取消后要按协议处理，不能任意扣减新状态计数 | 07 |
+| Capture / replay | 捕获／回放；记录并复用设备执行结构，仍受缓冲区形状和流依赖约束 | 08 |
+| BatchExecutionDescriptor | MRV2 本轮图模式与承载形状描述；匹配维度不只 token 数 | 08 |
+| Draft / verify | 草稿提议／目标验证；前者产生候选，后者决定可提交前缀 | 09 |
+| Correction / bonus | 纠正／额外 token；首次拒绝时由 target 纠正，全部接受时还可得到一个额外预测 | 09 |
+| Dynamic SD | 此版按 batch-size 区间配置查表选择 K 的既有路径 | 09 |
+| Adaptive Verification | 此版结合置信度／成本进行验证预算与压紧的既有路径，配置当前限制 DSpark | 09 |
+| TPOT / ITL | 首 token 后平均每输出 token 时间／流式事件间隔；投机多 token 提交时尤须区分 | 10 |
+| Goodput | 满足预先约定服务条件的有效完成速率；条件、窗口和失败统计都要固定 | 10 |
+| Warmup / measurement window | 预热／测量窗口；初始化、capture 与稳态生成应分别记录 | 10 |
+| Oracle / ablation | 正确性对照／消融；分别确认行为符合约束以及哪一部分产生收益 | 10 |
